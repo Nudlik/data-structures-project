@@ -37,3 +37,4 @@ def test_node():
 
 def test_stack_str(test_stack):
     assert str(test_stack) == 'data1 -> data2 -> data3'
+    assert str(Stack()) == 'None'
