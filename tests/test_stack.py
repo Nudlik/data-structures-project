@@ -33,3 +33,7 @@ def test_node():
     assert n1.data == 5
     assert n2.data == 'a'
     assert n2.next_node == n1
+
+
+def test_stack_str(test_stack):
+    assert str(test_stack) == 'data1 -> data2 -> data3'

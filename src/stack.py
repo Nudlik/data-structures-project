@@ -39,3 +39,16 @@ class Stack:
         popped_data = self.top.data
         self.top = self.top.next_node
         return popped_data
+
+    def __str__(self):
+        """Магический метод для строкового представления объекта стека"""
+        node = self.top
+        if node is None:
+            return 'None'
+
+        lst_node = []
+        while node:
+            lst_node.append(str(node.data))
+            node = node.next_node
+
+        return ' -> '.join(lst_node[::-1])
