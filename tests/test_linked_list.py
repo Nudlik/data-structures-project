@@ -36,3 +36,20 @@ def test_linkedlist_none():
     assert ll.head.data == {'id': 2}
 
 
+def test_linkedlist_get_by_id(test_fixture_linkedlist):
+    assert test_fixture_linkedlist.get_data_by_id(1) == {'id': 1}
+    assert test_fixture_linkedlist.get_data_by_id(2) == {'id': 2}
+    assert test_fixture_linkedlist.get_data_by_id(3) == {'id': 3}
+
+
+# def test_linkedlist_get_by_id_errors(test_fixture_linkedlist):  # как проверить то что блок try/except отработал?
+#     with pytest.raises(TypeError):
+#         try:
+#             test_fixture_linkedlist.get_data_by_id('1')
+#         except TypeError:
+#             pytest.fail()
+
+
+def test_linkedlist_to_list():
+    ll = LinkedList()
+    assert ll.to_list() == []
