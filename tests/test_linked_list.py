@@ -42,19 +42,12 @@ def test_linkedlist_get_by_id(test_fixture_linkedlist):
     assert test_fixture_linkedlist.get_data_by_id(3) == {'id': 3}
 
 
-# def test_linkedlist_get_by_id_errors():  # как проверить то что блок try/except отработал?
-#     ll = LinkedList()
-#     ll.insert_beginning({'id': 1, 'username': 'lazzy508509'})
-#     ll.insert_at_end('idusername')
-#     ll.insert_at_end([1, 2, 3])
-#     ll.insert_at_end({'id': 2, 'username': 'mosh_s'})
-#     with pytest.raises(TypeError):
-#         try:
-#             ll.get_data_by_id(2)
-#         except TypeError:
-#             pytest.fail()
-
-
 def test_linkedlist_to_list():
     ll = LinkedList()
     assert ll.to_list() == []
+
+
+def test_linkedlist_get_by_id_errors():
+    ll = LinkedList()
+    ll.insert_at_end([1, 2, 3])
+    assert ll.get_data_by_id(2) is None
